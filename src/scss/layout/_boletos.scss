@@ -1,0 +1,63 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+// BOLETOS
+.boletos{
+    padding: 5rem 0;
+    h3{
+        text-align: center;
+        color: v.$white;
+        margin-bottom: 2rem;
+    }
+
+    .container-boletos{
+        @include m.tablet {
+            @include m.grid(2, 5rem)
+        }
+    }
+}
+
+.pase{
+    &-dia{
+        color: v.$white;
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    &-header, &-footer{
+        padding: 1rem;
+        p{
+            color: v.$white;
+            margin: 0;
+            text-align: center;
+        }
+    }
+    &-header{
+        background-color: v.$rose;
+        p{
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+        
+    }
+    &-body{
+        background-color: v.$white;
+
+        ul{
+            @include m.reset-list;
+            li, :nth-child(odd){
+                background-color: v.$white;
+                padding: 1rem;
+                border: 1px solid #e1e1e1;
+            }
+        }
+    }
+    &-footer{
+        background-color: v.$purple;
+        p{
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+    }
+}
